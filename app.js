@@ -31,9 +31,9 @@ angularApp.controller('mainController', function ($scope, $log, $filter, $resour
 angularApp.controller('mainController3',['$scope','$log','$filter','$resource','$timeout' ,function ($scope, $log, $filter, $resource,$timeout) {
 
 	$scope.name='Tony';
-	$timeout(function() {
-		$scope.name='Everybody';
-	}, 3000);
+	// $timeout(function() {
+	// 	$scope.name='Everybody';
+	// }, 3000);
 }]);
 
 //minified version
@@ -48,26 +48,28 @@ angularApp.controller('mainController4', ['$scope','$filter','$timeout', functio
 		return $filter('lowercase')($scope.handle);
 	};
 
-	//monitor the cycle process of angular with watchers.
-	$scope.$watch('handle', function(newValue,oldValue){
-		console.info('Changed!');
-		console.log('Old ' + oldValue);
-		console.log('New ' + newValue);
-	});
+	$scope.characters=5;
 
-	setTimeout(function(){
+	//monitor the cycle process of angular with watchers.
+	// $scope.$watch('handle', function(newValue,oldValue){
+	// 	console.info('Changed!');
+	// 	console.log('Old ' + oldValue);
+	// 	console.log('New ' + newValue);
+	// });
+
+	// setTimeout(function(){
 		//make sure that angular execute
-		$scope.$apply(function(){
-			$scope.handle='newtwitterhandle';
-			console.log('scope changed');		
-		});
-	},3000);
+	// 	$scope.$apply(function(){
+	// 		$scope.handle='newtwitterhandle';
+	// 		console.log('scope changed');		
+	// 	});
+	// },3000);
 
 		//using angular timeout service.
-	$timeout(function(){
-			$scope.handle='newtwitterhandle angular';
-			console.log('scope changed');		
-	},6000);
+	// $timeout(function(){
+	// 		$scope.handle='newtwitterhandle angular';
+	// 		console.log('scope changed');		
+	// },6000);
 
 
 }]);
@@ -82,7 +84,7 @@ var searchPeople = function (firstname, lastname, height, age,occupation){
 // console.log(angular.injector().annotate(searchPeople));
 
 
-//DEPENDENCY INJECTION EXAMPLE
+//DEPENDENCY INJECTION EXAMPLE, pass the object into the function. WITHOUT CREATING THE OBJECT INSIDE THE FUNCTION.
 var Person = function(firstname, lastname){
 	this.firstname=firstname;
 	this.lastname=lastname;
