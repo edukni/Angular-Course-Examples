@@ -83,6 +83,16 @@ angularApp.controller('mainController4', ['$scope','$filter','$timeout', functio
 }]);
 
 
+
+angularApp.controller('mainController5', ['$scope', function ($scope) {
+    $scope.alertClick=function(){
+    	console.log("alert click");
+    };
+    $scope.name="Eduardo";
+
+}]);
+
+
 var searchPeople = function (firstname, lastname, height, age,occupation){
 	return'Jane Doe';
 }
