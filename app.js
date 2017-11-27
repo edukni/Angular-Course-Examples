@@ -50,6 +50,14 @@ angularApp.controller('mainController4', ['$scope','$filter','$timeout', functio
 
 	$scope.characters=5;
 
+	$scope.rules= [ 
+
+		{rulename: "Must be 5 characters"},
+		{rulename: "Must not be used elsewhere"},
+		{rulename: "Must be cool"}
+
+	];
+
 	//monitor the cycle process of angular with watchers.
 	// $scope.$watch('handle', function(newValue,oldValue){
 	// 	console.info('Changed!');
