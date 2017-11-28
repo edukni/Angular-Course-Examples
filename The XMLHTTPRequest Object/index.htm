@@ -58,15 +58,23 @@
                 
                 <h1>twitter.com/{{ lowercasehandle() }}</h1>
                 
+<!--                 <h3>Rules</h3>
+ --><!--                 <ul>
+                    <li ng-repeat="rule in rules">
+                        {{ rule.title }}
+                    </li>
+                </ul> -->
+                
+            </div>
+            <div ng-controller="mainController2">
                 <h3>Rules</h3>
                 <ul>
                     <li ng-repeat="rule in rules">
-                        {{ rule.rulename }}
+                        {{ rule.title }}
                     </li>
                 </ul>
-                
+                Add rule: <input type="text" ng-model="newRule" name=""> <a href="#" class="btn btn-default" ng-click="addRule()">Add</a>
             </div>
-            
 		</div>
 
     </body>
