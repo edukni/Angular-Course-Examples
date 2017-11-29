@@ -2,9 +2,8 @@
 <input type="text" name="" value="Doe">
 
 <h3>Search Results</h3>
-<div class="list-group">
-	<search-result></search-result>	
-	<div search-result></div>
-	<div class="search-result"></div>
-	<!-- directive: search-result -->
+<div class="list-group" >
+	<search-result ng-repeat="person in people" person-name="{{ person.name }}" person-address="{{person.address}}"></search-result>	
+	<search-result-object ng-repeat="person in people" person-object="person" formatted-address-function="formattedAddress(aperson)"></search-result-object >	
+
 </div>
